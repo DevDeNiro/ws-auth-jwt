@@ -1,1 +1,2 @@
-pnpm test
+echo "Running lint-staged"
+npx lint-staged

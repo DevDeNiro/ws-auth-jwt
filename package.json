@@ -1,5 +1,5 @@
 {
-  "name": "hello-world-api",
+  "name": "ws-auth-token",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky install"
   },
   "imports": {
     "#controllers/*": "./app/controllers/*.js",
@@ -46,6 +46,7 @@
     "@types/node": "^20.11.6",
     "eslint": "^8.56.0",
     "husky": "^9.0.6",
+    "lint-staged": "^15.2.0",
     "pino-pretty": "^10.3.1",
     "prettier": "^3.2.4",
     "ts-node": "^10.9.2",
@@ -64,6 +65,16 @@
   },
   "eslintConfig": {
     "extends": "@adonisjs/eslint-config/app"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "prettier": "@adonisjs/prettier-config"
 }
